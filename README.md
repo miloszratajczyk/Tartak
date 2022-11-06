@@ -1,5 +1,7 @@
 # Tartak
 
+A simple console application allowing users to manage assets of a store
+
 Zadanie polega na zaprojektowaniu oraz implementacji oprogramowania do zarządzania tartakiem. Każdy produkt
 charakteryzowany jest następującym rekordem danych:
 
@@ -23,11 +25,3 @@ program powinien umożliwiać wykonywanie następujących czynności:
 - *wyszukiwanie przy użyciu wyrażeń regularnych
 - zapisanie zgromadzonej bazy danych na dysku w postaci pliku
 - wczytanie zapisanej bazy danych ze wskazanego pliku
-
-MAGAZYN
-
-- Categories productCategories
-- vector<Product> products
-- show menu
-- load data
-- save data
