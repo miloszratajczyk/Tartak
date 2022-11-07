@@ -107,7 +107,7 @@ void Storage::search() {
     int id = 0;
     for (Product product: products) {
         if (product.containsPhrase(phrase))
-            cout << ++id << ".\t" << product.displayString() << endl;
+            cout << endl << ++id << ".\t" << product.displayString() << endl;
     }
     if (id == 0) cout << "=== BRAK PRODUKTÓW ===" << endl;
 }
@@ -169,7 +169,7 @@ void Storage::regexSearch() {
     int id = 0;
     for (Product product: products) {
         if (regex_search(product.toDataString(), regex(pattern)))
-            cout << ++id << ".\t" << product.displayString() << endl;
+            cout << endl << ++id << ".\t" << product.displayString() << endl;
     }
     if (id == 0) cout << "=== BRAK PRODUKTÓW ===" << endl;
 }

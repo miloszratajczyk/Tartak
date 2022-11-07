@@ -1,0 +1,5 @@
+Belka;Deska;Listwa;łata;
+Buk;Dąb;Heban;Lipa;Sosna;
+Listwa sosnowa;Listwa;Sosna;jasny zielony;2022-02-25;123;0.000000;50.500000;
+Deska bukowa;Deska;Buk;ciemny biały;2022-01-12;10;15.000000;0.000000;
+Listwa hebanowa;Listwa;Heban;czerwony;2022-02-20;54;2.000000;0.000000;

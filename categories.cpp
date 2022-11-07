@@ -3,13 +3,13 @@
 
 // Adds inputted category to `categories` set
 void Categories::addCategory() {
-    string categoryName = readLine("Podaj nazwe nowej kategori: ");
+    string categoryName = readLine("Podaj nazwe nowej kategorii: ");
     categories.insert(toCategoryFormat(categoryName));
 }
 
 // Removes inputted category from `categories` set
 void Categories::removeCategory() {
-    string categoryName = readLine("Podaj nazwe kategori do usunięcia: ");
+    string categoryName = readLine("Podaj nazwe kategorii do usunięcia: ");
     categories.erase(toCategoryFormat(categoryName));
 }
 

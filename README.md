@@ -1,6 +1,28 @@
 # Tartak
 
-A simple console application allowing users to manage assets of a store
+Projekt stworzony przez Miłosza Ratajczyka (numer indeksu: 272265)
+jako zadanie zaliczeniowe z przedmiotu Podstawy programowania
+
+### Informacje
+
+**Program wymaga wersji języka co najmniej C++11!**
+
+Program zajmuje się zarządaniem zasobami tartaku gdzie każdy z produktów zawiera informacje o nazwie produktu, kategorii
+produktu kategorii drewna, kolorze, dacie dostawy, liczbie sztuk, cenie jednostkowej i cenie za metr. Program daje
+możliwość manipulowania rekordami oraz zapisu i wczytania danych w pliku tekstowym imitując prostą baze danych.
+
+Po uruchomienu programu należy podac scieżkę do pliku w którym program ma zapisywać dane (dany jest przykładowy plik o
+nazwie data.txt).
+Następnie program pozwala na:
+
+1. Wyświetlenie wszystkich zasobów tartaku
+2. Wyszukanie produktu według dowolnej frazy np. listwa
+3. Dodanie produktu wypełniając każde z wyżej wymienionych pól produktu
+4. Edycje jednego lub wielu pól wybranego produktu
+5. Usunięcie wybranego produktu
+6. Wyszukanie produktu przy użyciu wyrażeń regularnych np. (Buk|Sosna)
+
+### Polecenie:
 
 Zadanie polega na zaprojektowaniu oraz implementacji oprogramowania do zarządzania tartakiem. Każdy produkt
 charakteryzowany jest następującym rekordem danych:
