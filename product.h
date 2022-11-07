@@ -33,10 +33,10 @@ public:
     string toDataString();
 
     /// Fills product fields from a single wrapped string with data
-    void fromDataString(string data);
+    void fromDataString(const string &data);
 
     /// Checks if any of product fields contain the given phrase
-    bool containsPhrase(string givenPhrase);
+    bool containsPhrase(const string &givenPhrase);
 };
 
 #endif //TARTAK_PRODUCT_H

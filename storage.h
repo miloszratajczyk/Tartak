@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <fstream>
+#include <regex>
 
 #include "product.h"
 
@@ -45,6 +46,9 @@ class Storage {
 
     // Allows user to select a product and then removes it
     void remove();
+
+    // Displays all products matching inputted regex pattern
+    void regexSearch();
 
 public:
     /// Starts the storage

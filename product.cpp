@@ -10,10 +10,7 @@ void Product::fill(Categories *productCategories, Categories *woodCategories, bo
     // Inputting `name` with validation
     if (!isEditing || readYesOrNo("Nazwa produktu: " + name + " Czy edytować? y/n : ")) {
         while (true) {
-            cout << "Podaj nazwe produktu: ";
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            getline(cin, name);
+            name = readLine("Podaj nazwe produktu: ");
             if (cin.fail()) cout << "Błędne dane." << endl;
             else if (name.empty()) cout << "Podaj dane." << endl;
             else break;
@@ -35,10 +32,7 @@ void Product::fill(Categories *productCategories, Categories *woodCategories, bo
     // Inputting `color`
     if (!isEditing || readYesOrNo("Kolor produktu: " + color + " Czy edytować? y/n : ")) {
         while (true) {
-            cout << "Podaj kolor produktu: ";
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            getline(cin, color);
+            color = readLine("Podaj kolor produktu: ");
             if (cin.fail()) cout << "Błędne dane." << endl;
             else if (color.empty()) cout << "Podaj dane." << endl;
             else break;
@@ -48,11 +42,7 @@ void Product::fill(Categories *productCategories, Categories *woodCategories, bo
     // Inputting `deliveryDate`
     if (!isEditing || readYesOrNo("Data dostawy: " + deliveryDate + " Czy edytować? y/n : ")) {
         while (true) {
-            cout << "Podaj date dostawy w formacie rrrr-mm-dd: ";
-            cin >> deliveryDate;
-            cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
+            deliveryDate = readString("Podaj date dostawy w formacie rrrr-mm-dd: ");
             int year = 0, month = 0, day = 0;
             try {
                 year = stoi(deliveryDate.substr(0, 4));
@@ -64,7 +54,7 @@ void Product::fill(Categories *productCategories, Categories *woodCategories, bo
             if (cin.fail()) cout << "Błędne dane." << endl;
             else if (deliveryDate.size() != 10) cout << "Błędna długośc daty" << endl;
             else if (deliveryDate[4] != '-' || deliveryDate[7] != '-') cout << "Brakuje myślnika" << endl;
-            else if (year < 2022) cout << "Błędny rok." << endl;
+            else if (year < 2000) cout << "Błędny rok." << endl;
             else if (month < 1 || month > 12) cout << "Błędny miesiąc." << endl;
             else if (day < 1 || day > 31) cout << "Błędny dzień." << endl;
             else break;
@@ -133,7 +123,7 @@ string Product::toDataString() {
 }
 
 /// Fills product fields from a single wrapped string with data
-void Product::fromDataString(string data) {
+void Product::fromDataString(const string &data) {
     // Split string by ';'
     vector<string> dataVector;
     string t;
@@ -157,7 +147,6 @@ void Product::fromDataString(string data) {
 }
 
 /// Checks if any of product fields contain the given phrase
-bool Product::containsPhrase(string givenPhrase) {
+bool Product::containsPhrase(const string &givenPhrase) {
     return toLowercase(toDataString()).find(toLowercase(givenPhrase)) != string::npos;
 }
-

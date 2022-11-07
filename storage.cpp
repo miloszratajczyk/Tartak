@@ -75,6 +75,8 @@ void Storage::showMenu() {
         cout << "3.\tDodaj produkt" << endl;
         cout << "4.\tEdytuj produkt" << endl;
         cout << "5.\tUsuń produkt" << endl;
+        cout << "6.\tWyszukiwanie zaawansowane" << endl;
+
 
         string choice = readString();
         if (choice == "0") break;
@@ -83,6 +85,7 @@ void Storage::showMenu() {
         else if (choice == "3") create();
         else if (choice == "4") edit();
         else if (choice == "5") remove();
+        else if (choice == "6") regexSearch();
     }
 }
 
@@ -99,7 +102,7 @@ void Storage::print(bool concise) {
 // Displays all products containing inputted phrase
 void Storage::search() {
     if (noProducts()) return;
-    string phrase = readString("Podaj fraze której chcesz szukać: ");
+    string phrase = readLine("Podaj fraze której chcesz szukać: ");
     cout << "Produkty które zawierają szukaną frazę: " << endl;
     int id = 0;
     for (Product product: products) {
@@ -155,6 +158,20 @@ void Storage::remove() {
             break;
         }
     }
+}
+
+
+// Displays all products matching inputted regex pattern
+void Storage::regexSearch() {
+    if (noProducts()) return;
+    string pattern = readLine("Podaj wyrażenie regex według którego chcesz szukać: ");
+    cout << "Produkty które są zgodne z szablonem: " << endl;
+    int id = 0;
+    for (Product product: products) {
+        if (regex_search(product.toDataString(), regex(pattern)))
+            cout << ++id << ".\t" << product.displayString() << endl;
+    }
+    if (id == 0) cout << "=== BRAK PRODUKTÓW ===" << endl;
 }
 
 

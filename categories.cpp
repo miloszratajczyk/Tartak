@@ -1,18 +1,15 @@
 #include "categories.h"
+#include "helpers.h"
 
 // Adds inputted category to `categories` set
 void Categories::addCategory() {
-    cout << "Podaj nazwe nowej kategori: ";
-    string categoryName;
-    cin >> categoryName;
+    string categoryName = readLine("Podaj nazwe nowej kategori: ");
     categories.insert(toCategoryFormat(categoryName));
 }
 
 // Removes inputted category from `categories` set
 void Categories::removeCategory() {
-    cout << "Podaj nazwe kategori do usunięcia: ";
-    string categoryName;
-    cin >> categoryName;
+    string categoryName = readLine("Podaj nazwe kategori do usunięcia: ");
     categories.erase(toCategoryFormat(categoryName));
 }
 
@@ -66,7 +63,3 @@ void Categories::fromDataString(const string &data) {
         } else { t += c; }
     }
 }
-
-
-
-
